@@ -1,0 +1,85 @@
+﻿@model IEnumerable<AppLocationVehicleASP.Models.Agency>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Airport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsClosed)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Code
+            </td>
+            <td>
+                @item.Airport
+            </td>
+            <td>
+                @item.Address
+            </td>
+            <td>
+                @item.ZipCode
+            </td>
+            <td>
+                @item.City
+            </td>
+            <td>
+                @item.Country
+            </td>
+            <td>
+                @item.IsClosed
+            </td>
+            <td>
+                <a asp-controller="Agency"
+                   asp-action="Update"
+                   asp-route-id="@item.Id">
+                    Modifier
+                </a>|
+                <a asp-controller="Agency"
+                   asp-action="Delete"
+                   asp-route-id="@item.Id"
+                   class="delete-link">
+                    Supprimer
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

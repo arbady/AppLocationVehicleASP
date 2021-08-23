@@ -1,0 +1,101 @@
+﻿@model IEnumerable<AppLocationVehicleASP.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Characteristic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NbPlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NbDoor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fuel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AirCo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gps)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transmission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StateId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegistrationNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Characteristic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbDoor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fuel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AirCo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gps)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transmission)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
