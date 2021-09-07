@@ -1,6 +1,15 @@
-﻿@{
+﻿@using AppLocationVehicleASP.Tools
+@{
     ViewData["Title"] = "Home Page";
 }
+@*<h2>Bonjour @Model.Select(m => m.LastName).FirstOrDefault()</h2>*@
+@if (SessionUtils.ConnectedUser != null)
+{
+                <p>Vous êtes connecté en tant que @(SessionUtils.ConnectedUser.LastName + " " + SessionUtils.ConnectedUser.FirstName)</p>
+                    } else
+                    {
+                <p>Aucun utilisateur connecté</p>
+            }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>

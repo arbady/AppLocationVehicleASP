@@ -1,0 +1,14 @@
+﻿@model IEnumerable<AppLocationVehicleASP.Models.Category>
+
+@{
+    ViewData["Title"] = "Category";
+}
+
+<h4>Nos categories :</h4>
+
+@foreach (var item in Model)
+{
+    <p>
+        @Html.ActionLink(item.TypeCat.ToString(), "Category", new { controller = "Location", id = item.Id })
+    </p>
+}

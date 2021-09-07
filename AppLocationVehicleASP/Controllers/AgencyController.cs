@@ -12,12 +12,14 @@ namespace AppLocationVehicleASP.Controllers
     public class AgencyController : Controller
     {
         // Ceci correspond à mon service => mon Requester
-        private readonly ApiRequester _requester;
+        private readonly ISecurity _requester;
 
-        public AgencyController()
+        public AgencyController(ISecurity requester)
         {
-            _requester = new ApiRequester("http://localhost:15148/api/"); 
+            _requester = requester;
         }
+
+
         // GET: Agency
         public IActionResult Index()
         {

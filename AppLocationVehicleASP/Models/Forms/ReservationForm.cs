@@ -9,33 +9,22 @@ namespace AppLocationVehicleASP.Models.Forms
 {
     public class ReservationForm
     {
-        [Required]
-        public DateTime ReservationDate { get; set; }
+        public int Id { get; set; }
+        //[Required]
+        //public DateTime ReservationDate { get; set; }
         [Required]
         public DateTime StartDateLocation { get; set; }
         [Required]
         public DateTime EndDateLocation { get; set; }
         [Required]
-        public double AmountTotTVA { get; set; }
-        [Required]
-        public double Deposit { get; set; }
-        [Required]
-        public bool DepositPaid { get; set; }
-        [Required]
-        public bool ReservationStatus { get; set; }
-        [Required]
-        public string ReturnAgency { get; set; }
+        public int ReturnAgency { get; set; }
         [Required]
         public bool DamageCover { get; set; }
         [Required]
         public bool RobberyCover { get; set; }
         [Required]
         public bool AgeRange { get; set; }
-        [Required]
-        public bool PaidAll { get; set; }
-        [Required]
-        public bool IsCancelled { get; set; }
-        [Required]
+        //[Required]
         public int UserId { get; set; }
         [Required]
         public int AgencyId { get; set; }

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AppLocationVehicleASP.Models.Category>
+
+@{
+    ViewData["Title"] = "IndexCat";
+}
+
+
+<p>
+    VOICI TOUTES LES CATEGORIES DE VEHICULES QUE NOUS POSSEDONS
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeCat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.TypeCat
+            </td>
+            <td>
+                <a asp-controller="Category"
+                   asp-action="Update"
+                   asp-route-id="@item.Id">
+                    Edit
+                </a>|
+                <a asp-controller="Category"
+                   asp-action="Details"
+                   asp-route-id="@item.Id">
+                    Details
+                </a>|
+                <a asp-controller="Category"
+                   asp-action="Delete"
+                   asp-route-id="@item.Id"
+                   class="delete-link">
+                    Delete
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

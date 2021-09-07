@@ -1,4 +1,5 @@
 ﻿using AppLocationVehicleASP.Models;
+using AppLocationVehicleASP.Models.Forms;
 using AppLocationVehicleASP.Tools;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,11 +12,10 @@ namespace AppLocationVehicleASP.Controllers
 {
     public class VehicleController : Controller
     {
-        private readonly ApiRequester _requester;
-
-        public VehicleController()
+        private readonly ISecurity _requester;
+        public VehicleController(ISecurity requester/*, CategoryForm cat*/)
         {
-            _requester = new ApiRequester("http://localhost:15148/api/");
+            _requester = requester;
         }
 
         // GET: VehicleController

@@ -12,11 +12,10 @@ namespace AppLocationVehicleASP.Controllers
 {
     public class MarkController : Controller
     {
-        private readonly ApiRequester _requester;
-
-        public MarkController()
+        private readonly ISecurity _requester;
+        public MarkController(ISecurity requester)
         {
-            _requester = new ApiRequester("http://localhost:15148/api/");
+            _requester = requester;
         }
 
         // GET: MarkController
@@ -54,7 +53,7 @@ namespace AppLocationVehicleASP.Controllers
                 TempData["success"] = "Insertion OK";
 
                 //En suite, on fait une redirection
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             else
             {
@@ -79,7 +78,7 @@ namespace AppLocationVehicleASP.Controllers
             {
                 _requester.Update<MarkForm>(form, "Mark" + id);
                 TempData["success"] = "Modification OK";
-                return RedirectToAction("Index");
+                return RedirectToAction(nameof(Index));
             }
             else
             {

@@ -1,0 +1,101 @@
+﻿@model IEnumerable<AppLocationVehicleASP.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDateLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDateLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReturnAgency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DamageCover)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RobberyCover)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgeRange)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCancelled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgencyId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDateLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDateLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnAgency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DamageCover)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RobberyCover)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgeRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCancelled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgencyId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

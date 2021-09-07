@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<AppLocationVehicleASP.Models.Vehicle>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Category";
 }
 
-<h1>Index</h1>
+<h1>Category</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -12,12 +12,12 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
+            </th>*@
+            @*<th>
                 @Html.DisplayNameFor(model => model.RegistrationNum)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Characteristic)
             </th>
@@ -39,7 +39,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Transmission)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.StateId)
             </th>
             <th>
@@ -47,67 +47,50 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CategoryId)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.RegistrationNum)
+            </td>*@
             <td>
-                @item.Id
+                @Html.DisplayFor(modelItem => item.Characteristic)
             </td>
             <td>
-                @item.RegistrationNum
+                @Html.DisplayFor(modelItem => item.NbPlace)
             </td>
             <td>
-                @item.Characteristic
+                @Html.DisplayFor(modelItem => item.NbDoor)
             </td>
             <td>
-                @item.NbPlace
+                @Html.DisplayFor(modelItem => item.Fuel)
             </td>
             <td>
-                @item.NbDoor
+                @Html.DisplayFor(modelItem => item.AirCo)
             </td>
             <td>
-                @item.Fuel
+                @Html.DisplayFor(modelItem => item.Gps)
             </td>
             <td>
-                @item.AirCo
+                @Html.DisplayFor(modelItem => item.Transmission)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.StateId)
             </td>
             <td>
-                @item.Gps
+                @Html.DisplayFor(modelItem => item.ModelId)
             </td>
             <td>
-                @item.Transmission
-            </td>
-            <td>
-                @item.StateId
-            </td>
-            <td>
-                @item.ModelId
-            </td>
-            <td>
-                @item.CategoryId
-            </td>
-            <td>
-                <a asp-controller="Vehicle"
-                   asp-action="Update"
-                   asp-route-id="@item.Id">
-                    Edit
-                </a>|
-                <a asp-controller="Vehicle"
-                   asp-action="Details"
-                   asp-route-id="@item.Id">
-                    Details
-                </a>|
-                <a asp-controller="Vehicle"
-                   asp-action="Delete"
-                   asp-route-id="@item.Id"
-                   class="delete-link">
-                    Delete
-                </a>
-            </td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>*@
+            
         </tr>
 }
     </tbody>
